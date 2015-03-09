@@ -13,6 +13,16 @@
 
 /*
 * ----------------------------------
+*  MICROSITIO
+* ----------------------------------
+*/
+
+Route::get('/', [
+	'uses' => 'IndexController@micrositio'
+]);
+
+/*
+* ----------------------------------
 *  USER ROUTES
 * ----------------------------------
 */
@@ -28,8 +38,12 @@ Route::post('user/points/{id}', [
 	'uses' => 'IndexController@addPoints'
 ]);
 
-Route::get('user/selfie/{id}', [
+Route::get('user/selfie/{idSelfie}', [
 	'uses' => 'IndexController@getSelfie'
+]);
+
+Route::get('user/selfies/{id}', [
+	'uses' => 'IndexController@getSelfies'
 ]);
 
 Route::post('user/selfie/{id}', [
@@ -50,6 +64,10 @@ Route::get('users/leaderboard/{fieldaction}', [
 	'uses' => 'IndexController@leaderBoard'
 ]);
 
-Route::get('users/selfie', [
+Route::get('users/selfie/', [
 	'uses' => 'IndexController@getAllSelfies'
+]);
+
+Route::get('users/leaders/', [
+	'uses' => 'IndexController@getLeaders'
 ]);

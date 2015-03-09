@@ -6,4 +6,8 @@ class Engagement extends Eloquent {
 		return $this->belongsToMany('User');
 	}
 
+	public function selfie(){
+		return $this->belongsTo('Selfie', 'id');
+	}
+
 }
